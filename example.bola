@@ -1,0 +1,36 @@
+//exemplo de código na linguagem FutLang
+
+//declaração de função
+jogada_ensaiada jogada_top(param1, param2) {
+
+    //declaração de variaveis
+    var1 := param1;
+    var2 := param2; 
+    result := var1 + var2;
+
+    //controle condicional
+    passe_longo(result > 10) {
+        //standard output
+        dar_entrevista "maior que 10"
+	} tava_impedido {
+        dar_entrevista "não deu maior que 10"
+	}
+
+    //controle de repetição
+    jogada_valida(result < 10) {
+        result := result + 1
+    }
+
+
+    //controle de repetição
+    contador := 0
+    lancamento(contador, contador < 10, contador++) {
+        dar_entrevista "passando pro jogador numero", contador
+    }
+
+    //retorno da função    
+	rebote var1 + var2;
+}
+
+//chamada de função
+jogada_top(1, 4);
