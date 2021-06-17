@@ -18,6 +18,12 @@
 %type <string> ESPACO ASSIGMENT OPERANDO
 
 %token <string>  K_JOG_ENS
+%token <string>  K_PASSE_LONGO
+%token <string>  K_TAVA_IMPEDIDO
+%token <string>  K_DAR_ENTREVISTA
+%token <string>  K_JOGADA_VALIDA
+%token <string>  K_LANCAMENTO
+
 %token <string>  IDENTIFIER ATRIBUITION OPERATOR
 %token <integer> NUMBER 
 
@@ -43,7 +49,7 @@ ASSIGMENT :
   ;
 
 MATH_OPERATION : 
-  OPERANDO {$$ = $1}////// AQUI NÃO ESTÁ COMPLETO, ELE RECONHECE "(1+1)+1" MAS NÃO RECONHECE "1+(1+1)"
+  OPERANDO { $$ = $1; }
   | '(' ESPACO MATH_OPERATION ESPACO ')' {    
       char *tmp = (char*) malloc (200);
       sprintf(tmp, "(%s)", $3);
