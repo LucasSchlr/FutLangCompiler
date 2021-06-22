@@ -1,2 +1,3 @@
 flex compiler.l
-bison -d compiler.y
+bison -dy compiler.y
+gcc -I. y.tab.c -o compiler.exe	

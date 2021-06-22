@@ -1,17 +1,79 @@
+%option noyywrap 
+/* eliminuje jakis rzaki bug wystepujacy we flexie, gdzie funkcja yywrap() wywolywana na koncu pliku nie dziala tak jak powinna z niokreslonych przyczyn */
+
 %{
-  #include<stdio.h>
-  #include<stdlib.h>
-  #include<compiler.tab.h>    
+#include "y.tab.h"
+
+int yyparse();
+
 %}
 
-%option noyywrap
- 
 %%
-[ ]+            {  printf("encontrei espaco\n"); return ' '; }
-jogada_ensaiada { return K_JOG_ENS; }
-rebote          { return yytext[0]; }
-[,\(\){};]      { printf("enontrei controldrd\n"); return yytext[0]; }
-[-+*/]          { printf("enontrei controldrd\n");  yylval.string=malloc(yyleng); sprintf(yylval.string,"%s",yytext); return OPERATOR; }
-:=              { printf("encontrei attr\n"); return ATRIBUITION; }
-[a-zA-Z0-9_]+   { printf("encontrei IDENTIFIER: |%s|\n", yytext); yylval.string=malloc(yyleng); sprintf(yylval.string,"%s",yytext); return IDENTIFIER; }
+
+
+"jogada_ensaiada" return K_JOGADA_ENSAIADA;
+"passe_longo"     return K_PASSE_LONGO;
+"tava_impedido"   return K_TAVA_IMPEDIDO;
+"dar_entrevista"  return K_DAR_ENTREVISTA;
+"jogada_valida"   return K_JOGADA_VALIDA;
+"lancamento"      return K_LANCAMENTO;
+"rebote"          return K_REBOTE;
+"futlang_init"    return K_FUTLANG_INIT;
+
+\"(\\.|[^"\\])*\"         {
+  printf("encontrei uma string\n");
+	yylval.vName=malloc(yyleng); 
+	sprintf(yylval.vName,"%s",yytext);
+  return VAR;
+}
+
+"++"|"--" {
+  return FOR_OPERATOR;
+}
+
+"+"|"-"|"*"|"/"|"^" {
+	yylval.vName=malloc(yyleng); 
+	sprintf(yylval.vName,"%s",yytext);
+	return OPERATOR;
+}
+
+"=="|">"|">="|"<"|"<="|"!=" {
+	yylval.vName=malloc(yyleng); 
+	sprintf(yylval.vName,"%s",yytext);
+	return CMP;
+}
+
+"("|")"|"{"|"}" {
+	return yytext[0];
+}
+
+[0-9]+ {
+	yylval.iValue=atoi(yytext);
+//  printf("encontrei number:|%s|\n", yytext);
+	return NUMBER;
+	}
+
+[A-Za-z0-9_]+ {
+	yylval.vName=malloc(yyleng); 
+	sprintf(yylval.vName,"%s",yytext);
+//  printf("encontrei var:|%s|\n", yytext);
+	return VAR;
+}
+
+":=" {
+  return yytext[0];
+}
+
+[=;,] {
+	return yytext[0];
+}
+
+[ \t\n] ;
+
+.	{
+	return UNK;
+	}
+
+"//".*$   { /*komentarz*/ }
+
 %%

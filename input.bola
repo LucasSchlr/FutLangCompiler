@@ -1,1 +1,20 @@
-vari:=1+2;
+a:=3;
+jogada_ensaiada jogada_Top() {
+    var1 := param1;
+    var2 := param2; 
+    result := var1 + var2;
+    passe_longo(result > 10) {
+        dar_entrevista "maior que 10";
+	} tava_impedido {
+        dar_entrevista "não deu maior que 10";
+	}
+    jogada_valida(result < 10) {
+        result := result + 1;
+    }
+    contador := 10;
+    lancamento(contador; contador < 10; contador++) {
+        dar_entrevista "passando pro jogador numero";
+    }
+    rebote var1 + var2;
+}
+jogada_top();
