@@ -442,13 +442,12 @@ static char *yy_last_accepting_cpos;
 char *yytext;
 #line 1 "compiler.l"
 #define INITIAL 0
-/* eliminuje jakis rzaki bug wystepujacy we flexie, gdzie funkcja yywrap() wywolywana na koncu pliku nie dziala tak jak powinna z niokreslonych przyczyn */
-#line 5 "compiler.l"
+#line 4 "compiler.l"
 #include "y.tab.h"
 
 int yyparse();
 
-#line 452 "lex.yy.c"
+#line 451 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -599,11 +598,11 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 11 "compiler.l"
+#line 10 "compiler.l"
 
 
 
-#line 607 "lex.yy.c"
+#line 606 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -688,47 +687,47 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "compiler.l"
-return K_JOGADA_ENSAIADA;
+#line 13 "compiler.l"
+{printf("encontrei jogada_ensaiada\n"); return K_JOGADA_ENSAIADA;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "compiler.l"
-return K_PASSE_LONGO;
+#line 14 "compiler.l"
+{printf("encontrei passe_longo\n"); return K_PASSE_LONGO;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "compiler.l"
-return K_TAVA_IMPEDIDO;
+#line 15 "compiler.l"
+{printf("encontrei tava_impedido\n"); return K_TAVA_IMPEDIDO;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "compiler.l"
-return K_DAR_ENTREVISTA;
+#line 16 "compiler.l"
+{printf("encontrei dar_entrevista\n"); return K_DAR_ENTREVISTA;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "compiler.l"
-return K_JOGADA_VALIDA;
+#line 17 "compiler.l"
+{printf("encontrei jogada_valida\n"); return K_JOGADA_VALIDA;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "compiler.l"
-return K_LANCAMENTO;
+#line 18 "compiler.l"
+{printf("encontrei lancamento\n"); return K_LANCAMENTO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 20 "compiler.l"
-return K_REBOTE;
+#line 19 "compiler.l"
+{printf("encontrei rebote\n"); return K_REBOTE;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 21 "compiler.l"
-return K_FUTLANG_INIT;
+#line 20 "compiler.l"
+{printf("encontrei jogada_ensaiada\n"); return K_FUTLANG_INIT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 23 "compiler.l"
+#line 22 "compiler.l"
 {
   printf("encontrei uma string\n");
 	yylval.vName=malloc(yyleng); 
@@ -738,14 +737,16 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 30 "compiler.l"
+#line 29 "compiler.l"
 {
+	yylval.vName=malloc(yyleng); 
+	sprintf(yylval.vName,"%s",yytext);
   return FOR_OPERATOR;
 }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 34 "compiler.l"
+#line 35 "compiler.l"
 {
 	yylval.vName=malloc(yyleng); 
 	sprintf(yylval.vName,"%s",yytext);
@@ -754,7 +755,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 40 "compiler.l"
+#line 41 "compiler.l"
 {
 	yylval.vName=malloc(yyleng); 
 	sprintf(yylval.vName,"%s",yytext);
@@ -763,23 +764,24 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 46 "compiler.l"
+#line 47 "compiler.l"
 {
 	return yytext[0];
 }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 50 "compiler.l"
+#line 51 "compiler.l"
 {
-	yylval.iValue=atoi(yytext);
+	yylval.iValue=malloc(yyleng); 
+	sprintf(yylval.iValue,"%s",yytext);
 //  printf("encontrei number:|%s|\n", yytext);
 	return NUMBER;
 	}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 56 "compiler.l"
+#line 58 "compiler.l"
 {
 	yylval.vName=malloc(yyleng); 
 	sprintf(yylval.vName,"%s",yytext);
@@ -789,26 +791,26 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 63 "compiler.l"
+#line 65 "compiler.l"
 {
   return yytext[0];
 }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 67 "compiler.l"
+#line 69 "compiler.l"
 {
 	return yytext[0];
 }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 71 "compiler.l"
+#line 73 "compiler.l"
 ;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 73 "compiler.l"
+#line 75 "compiler.l"
 {
 	return UNK;
 	}
@@ -818,15 +820,15 @@ case 20:
 yy_c_buf_p = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 77 "compiler.l"
+#line 79 "compiler.l"
 { /*komentarz*/ }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 79 "compiler.l"
+#line 81 "compiler.l"
 ECHO;
 	YY_BREAK
-#line 830 "lex.yy.c"
+#line 832 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1712,5 +1714,5 @@ int main()
 	return 0;
 	}
 #endif
-#line 79 "compiler.l"
+#line 81 "compiler.l"
 

@@ -42,9 +42,9 @@
      NUMBER = 258,
      CMP = 259,
      OPERATOR = 260,
-     UNK = 261,
-     PRINT = 262,
-     VAR = 263,
+     VAR = 261,
+     UNK = 262,
+     PRINT = 263,
      IF = 264,
      WHILE = 265,
      K_JOGADA_ENSAIADA = 266,
@@ -62,9 +62,9 @@
 #define NUMBER 258
 #define CMP 259
 #define OPERATOR 260
-#define UNK 261
-#define PRINT 262
-#define VAR 263
+#define VAR 261
+#define UNK 262
+#define PRINT 263
 #define IF 264
 #define WHILE 265
 #define K_JOGADA_ENSAIADA 266
@@ -85,9 +85,9 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 13 "compiler.y"
+#line 12 "compiler.y"
 
-    int iValue;
+    char *iValue;
     char *vName;
   	char *Instructions;
     char *Expressions;

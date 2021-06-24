@@ -1,20 +1,22 @@
 a:=3;
-jogada_ensaiada jogada_Top() {
+b:=4;
+b:=4;
+a:=3;
+passe_longo(a>b){
+    dar_entrevista "jogadaTop: "+1;
+}tava_impedido{
+    dar_entrevista a;
+}
+jogada_ensaiada jogada_Top(p1, p2) {
     var1 := param1;
     var2 := param2; 
-    result := var1 + var2;
-    passe_longo(result > 10) {
-        dar_entrevista "maior que 10";
-	} tava_impedido {
-        dar_entrevista "não deu maior que 10";
-	}
-    jogada_valida(result < 10) {
-        result := result + 1;
-    }
-    contador := 10;
-    lancamento(contador; contador < 10; contador++) {
-        dar_entrevista "passando pro jogador numero";
-    }
-    rebote var1 + var2;
 }
-jogada_top();
+b:=4;
+lancamento(b; b < 50; b ++){
+	dar_entrevista b;
+}
+jogada_valida(b>50){
+	var3 := 50;
+	var3 := 80;
+}
+jogada_Top(1,2);
