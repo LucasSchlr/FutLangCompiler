@@ -37,7 +37,7 @@ PROGRAM
 	: INSTRUCTION { 
 		printf("GERANDO output\n");
 		FILE *fptr;	
-	    fptr = fopen("D:\\OneDrive\\Documentos\\Escola\\AulasFACCAT\\Compiladores\\TrabalhoG2\\output.js","w"); 
+	    fptr = fopen("output.js","w"); 
       	fprintf(fptr, "%s", $1);
     	fclose(fptr); 
 	}
@@ -313,7 +313,7 @@ void yyerror(char *msg){
 }
 
 int main(){
-  yyin = fopen("D:\\OneDrive\\Documentos\\Escola\\AulasFACCAT\\Compiladores\\TrabalhoG2\\input.bola","r"); 
+  yyin = fopen("input.bola","r"); 
   yyparse();
   return 0;
 }
