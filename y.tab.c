@@ -1491,7 +1491,7 @@ yyreduce:
 		printf("PONTO 1;\n");
 
 		char *tmp = (char*) malloc (strlen((yyvsp[(2) - (3)].Expressions)) + 20 );
-		sprintf(tmp, "Console.log(%s)", (yyvsp[(2) - (3)].Expressions));
+		sprintf(tmp, "console.log(%s)", (yyvsp[(2) - (3)].Expressions));
 		(yyval.Instructions) = tmp;
 
 		printf("PONTO 1.2;\n");
@@ -1605,7 +1605,7 @@ yyreduce:
 		printf("PONTO 8;\n");
 
 		char *tmp = (char*) malloc ( strlen((yyvsp[(3) - (12)].vName)) + strlen((yyvsp[(5) - (12)].iValue)) + strlen((yyvsp[(7) - (12)].vName)) + strlen((yyvsp[(8) - (12)].iValue)) + strlen((yyvsp[(11) - (12)].Instructions)) +25);
-		sprintf(tmp, "for(let %s; %s; %s%s){\n%s\n}", (yyvsp[(3) - (12)].vName), (yyvsp[(5) - (12)].iValue), (yyvsp[(7) - (12)].vName), (yyvsp[(8) - (12)].iValue), (yyvsp[(11) - (12)].Instructions));
+		sprintf(tmp, "for(%s; %s; %s%s){\n%s\n}", (yyvsp[(3) - (12)].vName), (yyvsp[(5) - (12)].iValue), (yyvsp[(7) - (12)].vName), (yyvsp[(8) - (12)].iValue), (yyvsp[(11) - (12)].Instructions));
 		(yyval.Instructions) = tmp;
 
 		printf("PONTO 8.1;\n");
@@ -1620,7 +1620,7 @@ yyreduce:
 		printf("PONTO 9;\n");
 
 		char *tmp = (char*) malloc ( strlen((yyvsp[(1) - (4)].Instructions)) + strlen((yyvsp[(3) - (4)].Expressions)) +20);
-		sprintf(tmp, "%s\nConsole.log(%s)", (yyvsp[(1) - (4)].Instructions), (yyvsp[(3) - (4)].Expressions));
+		sprintf(tmp, "%s\nconsole.log(%s)", (yyvsp[(1) - (4)].Instructions), (yyvsp[(3) - (4)].Expressions));
 		(yyval.Instructions) = tmp;
 
 		printf("PONTO 9.1;\n");
@@ -1740,7 +1740,7 @@ yyreduce:
 		printf("PONTO 17;\n");
 		
 		char *tmp = (char*) malloc ( strlen((yyvsp[(1) - (13)].Instructions)) + strlen((yyvsp[(4) - (13)].vName)) + strlen((yyvsp[(6) - (13)].iValue)) + strlen((yyvsp[(8) - (13)].vName)) + strlen((yyvsp[(9) - (13)].iValue)) + strlen((yyvsp[(12) - (13)].Instructions)) + 25);
-		sprintf(tmp, "%s\nfor(let %s; %s; %s%s){\n%s\n}", (yyvsp[(1) - (13)].Instructions), (yyvsp[(4) - (13)].vName), (yyvsp[(6) - (13)].iValue), (yyvsp[(8) - (13)].vName), (yyvsp[(9) - (13)].iValue), (yyvsp[(12) - (13)].Instructions));
+		sprintf(tmp, "%s\nfor(%s; %s; %s%s){\n%s\n}", (yyvsp[(1) - (13)].Instructions), (yyvsp[(4) - (13)].vName), (yyvsp[(6) - (13)].iValue), (yyvsp[(8) - (13)].vName), (yyvsp[(9) - (13)].iValue), (yyvsp[(12) - (13)].Instructions));
 		(yyval.Instructions) = tmp;
 
 		printf("PONTO 17.1;\n");

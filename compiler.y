@@ -51,7 +51,7 @@ INSTRUCTION
 		printf("PONTO 1;\n");
 
 		char *tmp = (char*) malloc (strlen($2) + 20 );
-		sprintf(tmp, "Console.log(%s)", $2);
+		sprintf(tmp, "console.log(%s)", $2);
 		$$ = tmp;
 
 		printf("PONTO 1.2;\n");
@@ -117,7 +117,7 @@ INSTRUCTION
 		printf("PONTO 8;\n");
 
 		char *tmp = (char*) malloc ( strlen($3) + strlen($5) + strlen($7) + strlen($8) + strlen($11) +25);
-		sprintf(tmp, "for(let %s; %s; %s%s){\n%s\n}", $3, $5, $7, $8, $11);
+		sprintf(tmp, "for(%s; %s; %s%s){\n%s\n}", $3, $5, $7, $8, $11);
 		$$ = tmp;
 
 		printf("PONTO 8.1;\n");
@@ -127,7 +127,7 @@ INSTRUCTION
 		printf("PONTO 9;\n");
 
 		char *tmp = (char*) malloc ( strlen($1) + strlen($3) +20);
-		sprintf(tmp, "%s\nConsole.log(%s)", $1, $3);
+		sprintf(tmp, "%s\nconsole.log(%s)", $1, $3);
 		$$ = tmp;
 
 		printf("PONTO 9.1;\n");
@@ -199,7 +199,7 @@ INSTRUCTION
 		printf("PONTO 17;\n");
 		
 		char *tmp = (char*) malloc ( strlen($1) + strlen($4) + strlen($6) + strlen($8) + strlen($9) + strlen($12) + 25);
-		sprintf(tmp, "%s\nfor(let %s; %s; %s%s){\n%s\n}", $1, $4, $6, $8, $9, $12);
+		sprintf(tmp, "%s\nfor(%s; %s; %s%s){\n%s\n}", $1, $4, $6, $8, $9, $12);
 		$$ = tmp;
 
 		printf("PONTO 17.1;\n");

@@ -1,22 +1,30 @@
-a:=3;
-b:=4;
-b:=4;
-a:=3;
+a:=10;
+b:=5;
 passe_longo(a>b){
-    dar_entrevista "jogadaTop: "+1;
+    dar_entrevista "a maior que b, valor de a eh="+a;
 }tava_impedido{
-    dar_entrevista a;
+    dar_entrevista "b maior que a, valor de b eh= "+b;
 }
 jogada_ensaiada jogada_Top(p1, p2) {
-    var1 := param1;
-    var2 := param2; 
+    dar_entrevista "chamou funcao jogada_top";
+    var1 := p1 + 5;
+    var2 := p2 + 100; 
+    dar_entrevista "alguma soma aleatoria que eu fiz aqui: "+ var1 + ":" + var2;
+    var3 := var1 + var2;
+    rebote var3;
 }
-b:=4;
-lancamento(b; b < 50; b ++){
-	dar_entrevista b;
+c:=0;
+lancamento(c; c < 10; c++){
+    dar_entrevista "isso é um for";
+	dar_entrevista c;
 }
-jogada_valida(b>50){
-	var3 := 50;
-	var3 := 80;
+d:=0;
+var3:=0;
+jogada_valida(d<10){
+    dar_entrevista "isso é um while";
+	var3 := d + 10;
+    dar_entrevista var3;
+
+    d := d + 1;
 }
 jogada_Top(1,2);
