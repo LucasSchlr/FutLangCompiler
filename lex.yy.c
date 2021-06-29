@@ -601,8 +601,7 @@ YY_DECL
 #line 10 "compiler.l"
 
 
-
-#line 606 "lex.yy.c"
+#line 605 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -687,66 +686,65 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "compiler.l"
-{printf("encontrei jogada_ensaiada\n"); return K_JOGADA_ENSAIADA;}
+#line 12 "compiler.l"
+{return K_JOGADA_ENSAIADA;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "compiler.l"
-{printf("encontrei passe_longo\n"); return K_PASSE_LONGO;}
+#line 13 "compiler.l"
+{return K_PASSE_LONGO;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 15 "compiler.l"
-{printf("encontrei tava_impedido\n"); return K_TAVA_IMPEDIDO;}
+#line 14 "compiler.l"
+{return K_TAVA_IMPEDIDO;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 16 "compiler.l"
-{printf("encontrei dar_entrevista\n"); return K_DAR_ENTREVISTA;}
+#line 15 "compiler.l"
+{return K_DAR_ENTREVISTA;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 17 "compiler.l"
-{printf("encontrei jogada_valida\n"); return K_JOGADA_VALIDA;}
+#line 16 "compiler.l"
+{return K_JOGADA_VALIDA;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 18 "compiler.l"
-{printf("encontrei lancamento\n"); return K_LANCAMENTO;}
+#line 17 "compiler.l"
+{return K_LANCAMENTO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 19 "compiler.l"
-{printf("encontrei rebote\n"); return K_REBOTE;}
+#line 18 "compiler.l"
+{return K_REBOTE;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 20 "compiler.l"
-{printf("encontrei jogada_ensaiada\n"); return K_FUTLANG_INIT;}
+#line 19 "compiler.l"
+{return K_FUTLANG_INIT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 22 "compiler.l"
+#line 21 "compiler.l"
 {
-  printf("encontrei uma string\n");
 	yylval.vName=malloc(yyleng); 
 	sprintf(yylval.vName,"%s",yytext);
-  return VAR;
+  	return VAR;
 }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 29 "compiler.l"
+#line 27 "compiler.l"
 {
 	yylval.vName=malloc(yyleng); 
 	sprintf(yylval.vName,"%s",yytext);
-  return FOR_OPERATOR;
+ 	return FOR_OPERATOR;
 }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 35 "compiler.l"
+#line 33 "compiler.l"
 {
 	yylval.vName=malloc(yyleng); 
 	sprintf(yylval.vName,"%s",yytext);
@@ -755,7 +753,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 41 "compiler.l"
+#line 39 "compiler.l"
 {
 	yylval.vName=malloc(yyleng); 
 	sprintf(yylval.vName,"%s",yytext);
@@ -764,53 +762,51 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 47 "compiler.l"
+#line 45 "compiler.l"
 {
 	return yytext[0];
 }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 51 "compiler.l"
+#line 49 "compiler.l"
 {
 	yylval.iValue=malloc(yyleng); 
 	sprintf(yylval.iValue,"%s",yytext);
-//  printf("encontrei number:|%s|\n", yytext);
 	return NUMBER;
 	}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 58 "compiler.l"
+#line 55 "compiler.l"
 {
 	yylval.vName=malloc(yyleng); 
 	sprintf(yylval.vName,"%s",yytext);
-//  printf("encontrei var:|%s|\n", yytext);
 	return VAR;
 }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 65 "compiler.l"
+#line 61 "compiler.l"
 {
   return yytext[0];
 }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 69 "compiler.l"
+#line 65 "compiler.l"
 {
 	return yytext[0];
 }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 73 "compiler.l"
+#line 69 "compiler.l"
 ;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 75 "compiler.l"
+#line 71 "compiler.l"
 {
 	return UNK;
 	}
@@ -820,15 +816,15 @@ case 20:
 yy_c_buf_p = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 79 "compiler.l"
+#line 75 "compiler.l"
 { /*komentarz*/ }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 81 "compiler.l"
+#line 77 "compiler.l"
 ECHO;
 	YY_BREAK
-#line 832 "lex.yy.c"
+#line 828 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1714,5 +1710,5 @@ int main()
 	return 0;
 	}
 #endif
-#line 81 "compiler.l"
+#line 77 "compiler.l"
 

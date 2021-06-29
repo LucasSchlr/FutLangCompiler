@@ -27,4 +27,5 @@ jogada_valida(d<10){
 
     d := d + 1;
 }
-jogada_Top(1,2);
+variavel3 := jogada_Top(1,2);
+dar_entrevista variavel3;

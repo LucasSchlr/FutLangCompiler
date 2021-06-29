@@ -26,4 +26,5 @@ var3=d+10
 console.log(var3)
 d=d+1
 }
-jogada_Top(1,2)
+variavel3=jogada_Top(1,2)
+console.log(variavel3)
